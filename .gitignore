@@ -6,3 +6,4 @@
 amsvenv
 logs*
 logs/*
+venv
