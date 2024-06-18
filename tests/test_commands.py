@@ -1,8 +1,5 @@
 import pytest
 from app import App
-from app.plugins.goodbye import GoodbyeCommand
-from app.plugins.greet import GreetCommand
-
 
 def test_app_greet_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'greet' command."""
