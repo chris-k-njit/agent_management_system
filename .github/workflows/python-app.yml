@@ -28,6 +28,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with pytest --pylint --cov # Added more here, after observing requirements.txt file
+    - name: Test with pytest --pylint --cov
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        pytest --pylint --cov 
+        pytest --pylint --cov
