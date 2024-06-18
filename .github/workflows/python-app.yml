@@ -28,6 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with pytest --pylint
+    - name: Test with pytest --pylint --cov # Added more here, after observing requirements.txt file
       run: |
-        pytest
+        pytest --pylint --cov 
