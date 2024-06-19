@@ -1,4 +1,4 @@
-""" Test App """
+""" Test app file (some tests seem extra) """
 
 import pytest
 from app import App
@@ -18,12 +18,12 @@ def test_app_start_unknown_command(capfd, monkeypatch):
     # Simulate user entering an unknown command followed by 'exit'
     inputs = iter(['unknown_command', 'exit'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    
+
     app = App()
-   
+    
     with pytest.raises(SystemExit):
         app.start()
-
+    
     # Optionally, check for specific exit code or message
     # assert excinfo.value.code == expected_exit_code
     
