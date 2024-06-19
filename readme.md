@@ -11,4 +11,4 @@
 ### AI Agents found in this Homework
 - History Teacher (from Professor)
 - Movie Advisor (from Professor)
-- Subject #3 (My AI Agent, added in shortly.)
+- Alternate Transit Advisor/Expert (My AI Agent)
