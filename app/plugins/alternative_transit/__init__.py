@@ -25,7 +25,7 @@ class AlternativeTransitExpertChat(Command):
 
     def interact_with_ai(self, user_input, character_name):
         # Generate a more conversational and focused prompt
-        prompt_text = "If you live in NYC, you know the LIRR and NJT consistently have issues. Help a user find a cost-effective, time-effective means of getting home if their train is cancelled or experiencing heavy delays. Communicate and engage with the user is a calm manner with easy going communication on the alternative transit options they have to get home. Utilize their inputs to adjust the alternative means of transit that is available to them."
+        prompt_text = "If you live in a big city in the US, you know that public transportation can occasionally encounter issues. When a user's train is canceled or significantly delayed, assist them in finding cost-effective and time-efficient alternatives to get home. Engage with the user calmly and casually, providing clear and friendly communication. Use their inputs to tailor the transit options available to them, ensuring the recommendations suit their specific needs and preferences."
         prompt = ChatPromptTemplate.from_messages(self.history + [("system", prompt_text)])
         
         output_parser = StrOutputParser()
@@ -40,12 +40,12 @@ class AlternativeTransitExpertChat(Command):
 
     def execute(self, *args, **kwargs):
         character_name = kwargs.get("character_name", "Alternative Transit Expert")
-        print(f"Hello! Let's find an alternative means of getting you home today, seeing as the LIRR or NJT appears to be having some major problems again :( . When you are finished, please type 'done' to exit.")
+        print(f"Welcome to the alternative transit chat. \nIt appears that public transit in your area is running into issues, let's find an alternative means of getting you to your destination. \nWhen you are finished, please type 'done' to exit.")
 
         while True:
             user_input = input("You: ").strip()
             if user_input.lower() == "done":
-                print("Thank you for using the Alternative Transit Expert Chat. Farewell!")
+                print("Thank you for using the Alternative Transit Expert Chat. \nWe hope you won't need to contact us again for a while. \nFarewell!")
                 break
 
             self.history.append(("user", user_input))
