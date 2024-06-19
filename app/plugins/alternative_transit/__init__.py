@@ -25,7 +25,7 @@ class AlternativeTransitExpertChat(Command):
 
     def interact_with_ai(self, user_input, character_name):
         # Generate a more conversational and focused prompt
-        prompt_text = "If you live in a big city in the US, you know that public transportation can occasionally encounter issues. When a user's train is canceled or significantly delayed, assist them in finding cost-effective and time-efficient alternatives to get home. Engage with the user calmly and casually, providing clear and friendly communication. Use their inputs to tailor the transit options available to them, ensuring the recommendations suit their specific needs and preferences."
+        prompt_text = "If you live in a big city in the US, you know that public transportation can occasionally encounter issues. When a user's train is canceled or significantly delayed, act as an expert in assisting them in finding cost-effective VS time-efficient alternatives to get home. Use their inputs to tailor the transit options available to them, ensuring the recommendations suit their specific needs and preferences."
         prompt = ChatPromptTemplate.from_messages(self.history + [("system", prompt_text)])
         
         output_parser = StrOutputParser()
